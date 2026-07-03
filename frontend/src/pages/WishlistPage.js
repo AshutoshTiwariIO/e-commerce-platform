@@ -23,7 +23,7 @@ function WishlistPage() {
         {wishlist.map(p => (
           <div key={p.id} style={styles.card}>
             <Link to={`/products/${p.id}`}>
-              <div style={styles.imagePlaceholder}></div>
+              <img src={p.imageUrl} alt={p.name} style={styles.image} />
               <h4>{p.name}</h4>
               <p style={styles.price}>${p.price.toFixed(2)}</p>
             </Link>
@@ -42,7 +42,7 @@ const styles = {
   empty: { textAlign: 'center', marginTop: '60px' },
   grid: { display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: '16px', marginTop: '16px' },
   card: { background: '#fff', padding: '16px', borderRadius: '8px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' },
-  imagePlaceholder: { height: '140px', background: '#eee', borderRadius: '4px', marginBottom: '8px' },
+  image: { width: '100%', height: '140px', objectFit: 'cover', borderRadius: '4px', marginBottom: '8px', background: '#eee' },
   price: { color: '#e94560', fontWeight: 'bold', marginTop: '4px' },
   actions: { display: 'flex', gap: '8px', marginTop: '12px' },
   cartBtn: { flex: 1, padding: '8px', background: '#1a1a2e', color: '#fff', border: 'none', borderRadius: '4px', fontSize: '0.85rem' },

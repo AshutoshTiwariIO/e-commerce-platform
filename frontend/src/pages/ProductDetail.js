@@ -29,7 +29,7 @@ function ProductDetail() {
 
   return (
     <div style={styles.container}>
-      <div style={styles.imagePlaceholder}></div>
+      <img src={product.imageUrl} alt={product.name} style={styles.image} />
       <div style={styles.info}>
         <h1>{product.name}</h1>
         <p style={styles.category}>{product.categoryName}</p>
@@ -54,7 +54,7 @@ function ProductDetail() {
 
 const styles = {
   container: { display: 'flex', gap: '40px', marginTop: '24px' },
-  imagePlaceholder: { width: '400px', height: '400px', background: '#eee', borderRadius: '8px', flexShrink: 0 },
+  image: { width: '400px', height: '400px', objectFit: 'cover', borderRadius: '8px', flexShrink: 0, background: '#eee' },
   info: { flex: 1 },
   category: { color: '#888', fontSize: '0.9rem', marginTop: '4px' },
   price: { fontSize: '2rem', fontWeight: 'bold', color: '#e94560', margin: '16px 0' },

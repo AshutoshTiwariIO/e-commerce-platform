@@ -47,7 +47,7 @@ function ProductList() {
         {products.map(p => (
           <div key={p.id} style={styles.card}>
             <Link to={`/products/${p.id}`}>
-              <div style={styles.imagePlaceholder}></div>
+              <img src={p.imageUrl} alt={p.name} style={styles.image} />
               <h3 style={styles.name}>{p.name}</h3>
               <p style={styles.category}>{p.categoryName}</p>
               <p style={styles.price}>${p.price.toFixed(2)}</p>
@@ -81,7 +81,7 @@ const styles = {
   select: { padding: '10px', border: '1px solid #ddd', borderRadius: '4px', minWidth: '160px' },
   grid: { display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))', gap: '20px' },
   card: { background: '#fff', borderRadius: '8px', padding: '16px', boxShadow: '0 2px 4px rgba(0,0,0,0.08)' },
-  imagePlaceholder: { height: '160px', background: '#eee', borderRadius: '4px', marginBottom: '12px' },
+  image: { width: '100%', height: '160px', objectFit: 'cover', borderRadius: '4px', marginBottom: '12px', background: '#eee' },
   name: { fontSize: '1rem', marginBottom: '4px' },
   category: { fontSize: '0.8rem', color: '#888' },
   price: { fontSize: '1.2rem', fontWeight: 'bold', color: '#e94560', marginTop: '8px' },

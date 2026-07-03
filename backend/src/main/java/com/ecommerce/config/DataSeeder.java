@@ -68,7 +68,7 @@ public class DataSeeder implements CommandLineRunner {
         p.setDescription(description);
         p.setPrice(BigDecimal.valueOf(price));
         p.setStock(stock);
-        p.setImageUrl("/images/" + name.toLowerCase().replaceAll("\\s+", "-") + ".jpg");
+        p.setImageUrl("https://picsum.photos/seed/" + name.toLowerCase().replaceAll("\\s+", "-") + "/400/400");
         p.setCategory(category);
         return p;
     }
